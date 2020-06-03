@@ -14,4 +14,11 @@ class CookBook
       recipe.ingredients.flat_map {|ingredient| ingredient.name}
     end.uniq
   end
+
+  def higest_calorie_meal
+    @recipes.max_by do |recipe|
+      recipe.total_calories
+      #require "pry"; binding.pry
+    end
+  end
 end
