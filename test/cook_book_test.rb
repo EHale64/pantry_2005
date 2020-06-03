@@ -54,5 +54,3 @@ class RecipeTest < Minitest::Test
     assert_equal @recipe2, @cookbook.higest_calorie_meal
   end
 end
-
-  

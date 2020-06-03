@@ -51,15 +51,5 @@ class RecipeTest < Minitest::Test
     assert_equal 675, @recipe2.total_calories
   end
 
-  def test_it_can_tell_if_it_has_enough_ingredients
-    @recipe1.add_ingredient(@ingredient1, 2)
-    @recipe1.add_ingredient(@ingredient2, 8)
-    @pantry.restock(@ingredient1, 5)
-    @pantry.restock(@ingredient1, 10)
-    assert_equal false, @pantry.enough_ingredients_for?(@recipe1)
-    @pantry.restock(@ingredient2, 7)
-    assert_equal false, @pantry.enough_ingredients_for?(@recipe1)
-    @pantry.restock(@ingredient2, 8)
-    assert_equal true, @pantry.enough_ingredients_for?(@recipe1)
-  end
+  
 end

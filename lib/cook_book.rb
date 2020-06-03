@@ -11,13 +11,11 @@ class CookBook
 
   def ingredients
     @recipes.flat_map do |recipe|
-      recipe.ingredients.flat_map {|ingredient| ingredient.name}
+      recipe.ingredients.flat_map { |ingredient| ingredient.name }
     end.uniq
   end
 
   def higest_calorie_meal
-    @recipes.max_by do |recipe|
-      recipe.total_calories
-    end
+    @recipes.max_by { |recipe| recipe.total_calories }
   end
 end
